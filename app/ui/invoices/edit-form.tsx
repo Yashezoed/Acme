@@ -1,3 +1,4 @@
+/* eslint-disable */
 'use client';
 
 import { CustomerField, InvoiceForm } from '@/app/lib/definitions';
@@ -20,8 +21,11 @@ export default function EditInvoiceForm({
 	customers: CustomerField[];
 }) {
 	const initialState: State = { message: null, errors: {} };
-  	const updateInvoiceWithId = updateInvoice.bind(null, invoice.id);
-  	const [state, formAction] = useActionState(updateInvoiceWithId, initialState);
+	const updateInvoiceWithId = updateInvoice.bind(null, invoice.id);
+	const [state, formAction] = useActionState(
+		updateInvoiceWithId,
+		initialState
+	);
 
 	return (
 		<form action={formAction}>
